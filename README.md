@@ -1,4 +1,4 @@
-PROJECT LINK -> <a target="_blank" href="https://reabookstoreapp.netlify.app/">https://reabookstoreapp.netlify.app/</a>
+PROJECT LINK -> <a  href="https://reabookstoreapp.netlify.app/" target="_blank">https://reabookstoreapp.netlify.app/</a>
 
 # ReaBookStoreApp
 
