@@ -1,0 +1,45 @@
+<h2 mat-dialog-title>{{data ?'kitap bilgilerini düzenle':'Yeni kitap Ekle'}}</h2>
+<mat-dialog-content class="mat-typography">
+  <div *ngIf="showSpinner">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    <br>
+  </div>
+
+<form [formGroup]="cardForm" >
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Kitap Adı</mat-label>
+    <input matInput formControlName="bookName" >
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Yazar</mat-label>
+    <input matInput formControlName="author">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Tür</mat-label>
+    <input matInput formControlName="genre">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Yayın Evi</mat-label>
+    <input matInput formControlName="publisher" >
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Resim</mat-label>
+    <input matInput formControlName="image">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>AÇıklama</mat-label>
+    <textarea matInput formControlName="description"></textarea>
+
+  </mat-form-field>
+</form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <div class="flex-grow-1 text-start" *ngIf="data">
+    <button mat-stroked-button color="warn" (click)="deleteCard()" [disabled]="showSpinner">Sil</button>
+  </div>
+  <div>
+    <button mat-button mat-dialog-close>Vazgeç</button>
+    <button mat-flat-button color="primary" (click)="data ? updateCard() :addCard()"[disabled]="cardForm.invalid ||showSpinner" >{{data ?'Güncelle':'Ekle'}}</button>
+  </div>
+
+</mat-dialog-actions>

@@ -1,0 +1,32 @@
+
+<mat-card class="card-item">
+
+<div class="row">
+  <mat-card-header (click)="openUpdateCardModel(card)" >
+<div class="col-md-8 ">
+  <mat-card-title>{{card.bookName}}</mat-card-title>
+  <mat-card-subtitle>Yazar:{{card.author}}</mat-card-subtitle>
+  <mat-card-subtitle >
+    <span *ngIf="card.genre">Tür: {{card.genre}}</span>
+    <small class="text-warning" *ngIf="!card.genre">>Kitap Türü  Girilmemiş..</small>
+  </mat-card-subtitle>
+
+</div>
+<div class="col-md-4"  >
+    <img *ngIf="card.image" src="{{card.image}}" alt="{{card.image}}" width="100" height="100">
+  <img *ngIf="!card.image" src="https://www.dijitalistmarketing.com/wp-content/themes/consultix/images/no-image-found-360x260.png" alt="Resim Giirilmemiş" width="100" height="100">
+  </div>
+  </mat-card-header>
+</div>
+
+<mat-card-content>
+<ul class="list-group list-group-flush">
+<li class="list-group-item">Yayın Evi:{{card.publisher}}</li>
+<li class="list-group-item" style="white-space: nowrap;  overflow: hidden; text-overflow: ellipsis;">
+<span *ngIf="card.description">{{card.description}}</span>
+<small class="text-warning " *ngIf="!card.description">>Açıklama Girilmemiş..</small>
+
+</li>
+</ul>
+</mat-card-content>
+</mat-card>

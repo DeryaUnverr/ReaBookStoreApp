@@ -1,0 +1,4 @@
+<mat-form-field style="min-width: 300px" >
+  <mat-label>Kitap Ara:</mat-label>
+  <input matInput placeholder="Kitap Adı,Yazarı yada Türü" #searchText (keyup)="search(searchText.value)" >
+</mat-form-field>
